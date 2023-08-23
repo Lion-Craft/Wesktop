@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -39,6 +35,16 @@ namespace Wesktop
 		private void runToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Application.Run(new Wesktop__.NET_Framework_4._7._2_.RunDialog());
+		}
+
+		private void wINEToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Process.Start("winver");
+		}
+
+		private void wesktopToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(Assembly.GetExecutingAssembly().GetName().FullName);
 		}
 	}
 }
