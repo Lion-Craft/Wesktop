@@ -142,7 +142,7 @@ namespace Wesktop
 			this.ShowIcon = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "MenuBar";
+			this.Text = "Wesktop";
 			this.TopMost = true;
 			this.Load += new System.EventHandler(this.OnLoad);
 			this.AppBar.ResumeLayout(false);
