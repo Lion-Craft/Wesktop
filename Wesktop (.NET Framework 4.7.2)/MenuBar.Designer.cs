@@ -74,6 +74,7 @@ namespace Wesktop
 			// 
 			// runToolStripMenuItem
 			// 
+			this.runToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripMenuItem.Image")));
 			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
 			this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.runToolStripMenuItem.Text = "Run";
@@ -81,6 +82,7 @@ namespace Wesktop
 			// 
 			// fileExplorerToolStripMenuItem
 			// 
+			this.fileExplorerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileExplorerToolStripMenuItem.Image")));
 			this.fileExplorerToolStripMenuItem.Name = "fileExplorerToolStripMenuItem";
 			this.fileExplorerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.fileExplorerToolStripMenuItem.Text = "File Explorer";
