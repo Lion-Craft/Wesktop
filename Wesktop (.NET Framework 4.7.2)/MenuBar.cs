@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Wesktop__.NET_Framework_4._7._2_;
 
 namespace Wesktop
 {
@@ -19,7 +20,7 @@ namespace Wesktop
 			Width = screen.Width;
 			Height = 25;
 			ActiveForm.Size = new Size(Width, Height);    //	Sets width to screen width
-			ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
+			//ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
 		}
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace Wesktop
 
 		private void runToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Application.Run(new Wesktop__.NET_Framework_4._7._2_.RunDialog());
+			new Thread(() => new RunDialog().ShowDialog()).Start();
 		}
 
 		private void wINEToolStripMenuItem_Click(object sender, EventArgs e)
