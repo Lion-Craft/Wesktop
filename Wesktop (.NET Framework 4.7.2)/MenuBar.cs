@@ -82,5 +82,22 @@ namespace Wesktop
 				}
 			}
 		}
+
+		private void controlPanelToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Process.Start("control");
+		}
+
+		private void wINEConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Process.Start("winecfg");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message + "\n\nThis can be caused due to running either natively on Windows or due to a corrupt WINE install.");
+			}
+		}
 	}
 }
