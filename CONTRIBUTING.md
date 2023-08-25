@@ -23,3 +23,11 @@ Version numbering follows the following pattern:
 - Minor version may be increased by 1 for each issue completed within the current milestone, starting back at 0 when the milestone is completed.
 - Build and Revision number will be automatically set by the compiler.
 - Codenames (starting at v2.0) will be picked by the repository owner and/or maintainer.
+
+## Colors
+
+Values below in [R,G,B - #RRGGBB] format
+
+- Light Red: 153,3,23 - #990317
+- Dark Red: 127,3,19 - #7F0313
+- Light Blue: 0,162,232 - #00A2E8
