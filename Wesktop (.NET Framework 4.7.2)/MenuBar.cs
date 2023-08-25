@@ -6,27 +6,28 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Wesktop__.NET_Framework_4._7._2_;
+using System.ComponentModel;
 
 namespace Wesktop
 {
 	public partial class MenuBar : Form
 	{
-		
+
 		public MenuBar()
 		{
 			InitializeComponent();
 		}
 
 		//	Size window to appropriate size and hide arrow on load
-		private void OnLoad(object sender, EventArgs e)
+		private async void OnLoad(object sender, EventArgs e)
 		{
 			Rectangle screen = Screen.FromControl(this).Bounds;
 			Width = screen.Width;	//	Sets width of MenuBar
 			Height = 25;	//	Sets height of MenuBar		Note: 25 is the correct height for the AppBar
 			ActiveForm.Size = new Size(Width, Height);    //	Sets width to screen width
 			//ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
-
-			Start.ShowDropDownArrow = false;	//	Disable the Arrow on the Menu button
+			Start.ShowDropDownArrow = false;    //	Disable the Arrow on the Menu button
+			timer1.Start();
 		}
 
 		//	Exit Wesktop
@@ -81,6 +82,12 @@ namespace Wesktop
 					Start.ShowDropDown();	//	Open Menu
 				}
 			}
+		}
+
+		//	Update Clock and Date each timer tick (50ms)
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			Time.Text = DateTime.Now.ToString("HH:mm dd.MM.yyyy");    //	Get Time and write it into the Time Label
 		}
 	}
 }
