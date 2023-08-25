@@ -13,7 +13,9 @@
 - master:
   - Main stable branch. Do not directly commit to master.
 - development:
-  - Primary development branch. Push to this branch and open pull requests.
+  - Primary development branch. Push to this branch(if no issue-specific branch exists) and open pull requests.
+- [issue number]-[issue name]:
+  - Issue specific branch. If you work on a issue push to the correct issue specific branch and create a pull request to development once you consider the issue implemented/fixed.
 
 ## Version numbering
 
