@@ -17,16 +17,16 @@ namespace Wesktop
 			InitializeComponent();
 		}
 
-		//	Size window to appropriate size on load
+		//	Size window to appropriate size and hide arrow on load
 		private void OnLoad(object sender, EventArgs e)
 		{
 			Rectangle screen = Screen.FromControl(this).Bounds;
-			Width = screen.Width;
-			Height = 25;
+			Width = screen.Width;	//	Sets width of MenuBar
+			Height = 25;	//	Sets height of MenuBar		Note: 25 is the correct height for the AppBar
 			ActiveForm.Size = new Size(Width, Height);    //	Sets width to screen width
 			//ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
 
-			Start.ShowDropDownArrow = false;
+			Start.ShowDropDownArrow = false;	//	Disable the Arrow on the Menu button
 		}
 
 		//	Exit Wesktop
@@ -48,7 +48,7 @@ namespace Wesktop
 			new Thread(() => new RunDialog().ShowDialog()).Start();
 		}
 
-		//	Call winver to display WINE info
+		//	Start winver to display WINE info
 		private void wINEToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("winver");

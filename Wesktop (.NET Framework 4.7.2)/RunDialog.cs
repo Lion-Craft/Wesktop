@@ -19,10 +19,11 @@ namespace Wesktop__.NET_Framework_4._7._2_
 			InitializeComponent();
 		}
 		
+		//	This is run when either the "Ok" button or accept key is pressed
 		private void Accept_Click(object sender, EventArgs e)
 		{
-			Process.Start(RunTextBox.Text);
-			ActiveForm.Hide();
+			Process.Start(RunTextBox.Text);	//	Get text from TextBox and start the process
+			ActiveForm.Hide();	//	Close RunDialog
 		}
 
 		//	TODO: Fix error when opening Run Dialog
