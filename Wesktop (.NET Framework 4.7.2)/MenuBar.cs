@@ -4,16 +4,20 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Wesktop__.NET_Framework_4._7._2_;
 
 namespace Wesktop
 {
 	public partial class MenuBar : Form
 	{
+		
 		public MenuBar()
 		{
 			InitializeComponent();
 		}
+
+		//	Size window to appropriate size on load
 		private void OnLoad(object sender, EventArgs e)
 		{
 			Rectangle screen = Screen.FromControl(this).Bounds;
@@ -21,31 +25,62 @@ namespace Wesktop
 			Height = 25;
 			ActiveForm.Size = new Size(Width, Height);    //	Sets width to screen width
 			//ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
+
+			Start.ShowDropDownArrow = false;
 		}
 
+		//	Exit Wesktop
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Process.Start("shutdown", "/s /t 0");
+			Application.Exit();
 		}
 
+		//	Open Explorer
 		private void fileExplorerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("explorer");
 		}
 
+		//	Create Run dialog
+		[STAThread]
 		private void runToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			new Thread(() => new RunDialog().ShowDialog()).Start();
 		}
 
+		//	Call winver to display WINE info
 		private void wINEToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("winver");
 		}
 
+		//	Create ShellAbout method for "About Wesktop" menu
+		[DllImport("shell32.dll")]
+		static extern int ShellAbout(IntPtr hWnd, string szApp, string szOtherStuff, IntPtr hIcon);	
+
+		//	Display info about Wesktop
 		private void wesktopToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(Assembly.GetExecutingAssembly().GetName().FullName);
+			//	Create and write License to variable
+			string license = "Wesktop is licensed unter the MIT License.";
+			//	Call ShellAbout
+			ShellAbout(IntPtr.Zero, "Wesktop " + Assembly.GetExecutingAssembly().GetName().Version.ToString(), "Wesktop v." + Assembly.GetExecutingAssembly().GetName().Version.ToString() + " https://github.com/Lion-Craft/Wesktop" + "\n" + license, Icon.Handle);
+		}
+
+		private void MenuBar_KeyUp(object sender, KeyEventArgs e)
+		{
+			//	Get pressed key and open or close the Menu
+			if (e.KeyCode == Keys.LWin || e.KeyCode == Keys.RWin)
+			{
+				if (Start.DropDown.Visible)
+				{
+					Start.HideDropDown();	//	Close Menu
+				}
+				else
+				{
+					Start.ShowDropDown();	//	Open Menu
+				}
+			}
 		}
 	}
 }

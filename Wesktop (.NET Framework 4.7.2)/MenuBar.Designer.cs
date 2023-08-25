@@ -32,14 +32,16 @@ namespace Wesktop
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBar));
 			this.AppBar = new System.Windows.Forms.ToolStrip();
 			this.Start = new System.Windows.Forms.ToolStripDropDownButton();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wINEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fileExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.wINEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.wesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.Time = new System.Windows.Forms.ToolStripLabel();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.AppBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -49,7 +51,9 @@ namespace Wesktop
 			this.AppBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.AppBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Start,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.Time,
+            this.toolStripSeparator3});
 			this.AppBar.Location = new System.Drawing.Point(0, 200);
 			this.AppBar.Name = "AppBar";
 			this.AppBar.Size = new System.Drawing.Size(686, 25);
@@ -72,11 +76,34 @@ namespace Wesktop
 			this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.Start.ToolTipText = "Opens the Menu";
 			// 
+			// aboutToolStripMenuItem
+			// 
+			this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wINEToolStripMenuItem,
+            this.wesktopToolStripMenuItem});
+			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.aboutToolStripMenuItem.Text = "About";
+			// 
+			// wINEToolStripMenuItem
+			// 
+			this.wINEToolStripMenuItem.Name = "wINEToolStripMenuItem";
+			this.wINEToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.wINEToolStripMenuItem.Text = "WINE";
+			this.wINEToolStripMenuItem.Click += new System.EventHandler(this.wINEToolStripMenuItem_Click);
+			// 
+			// wesktopToolStripMenuItem
+			// 
+			this.wesktopToolStripMenuItem.Name = "wesktopToolStripMenuItem";
+			this.wesktopToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.wesktopToolStripMenuItem.Text = "Wesktop";
+			this.wesktopToolStripMenuItem.Click += new System.EventHandler(this.wesktopToolStripMenuItem_Click);
+			// 
 			// runToolStripMenuItem
 			// 
 			this.runToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripMenuItem.Image")));
 			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-			this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.runToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.runToolStripMenuItem.Text = "Run";
 			this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
 			// 
@@ -84,7 +111,7 @@ namespace Wesktop
 			// 
 			this.fileExplorerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileExplorerToolStripMenuItem.Image")));
 			this.fileExplorerToolStripMenuItem.Name = "fileExplorerToolStripMenuItem";
-			this.fileExplorerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.fileExplorerToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.fileExplorerToolStripMenuItem.Text = "File Explorer";
 			this.fileExplorerToolStripMenuItem.ToolTipText = "Open File Explorer";
 			this.fileExplorerToolStripMenuItem.Click += new System.EventHandler(this.fileExplorerToolStripMenuItem_Click);
@@ -92,13 +119,13 @@ namespace Wesktop
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(135, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.exitToolStripMenuItem.Text = "Shutdown";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.ToolTipText = "Exit WINE";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -107,36 +134,28 @@ namespace Wesktop
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
 			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
-			// aboutToolStripMenuItem
+			// Time
 			// 
-			this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.wINEToolStripMenuItem,
-            this.wesktopToolStripMenuItem});
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.aboutToolStripMenuItem.Text = "About";
+			this.Time.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.Time.Name = "Time";
+			this.Time.Size = new System.Drawing.Size(22, 22);
+			this.Time.Text = "!!:!!";
 			// 
-			// wINEToolStripMenuItem
+			// toolStripSeparator3
 			// 
-			this.wINEToolStripMenuItem.Name = "wINEToolStripMenuItem";
-			this.wINEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.wINEToolStripMenuItem.Text = "WINE";
-			this.wINEToolStripMenuItem.Click += new System.EventHandler(this.wINEToolStripMenuItem_Click);
-			// 
-			// wesktopToolStripMenuItem
-			// 
-			this.wesktopToolStripMenuItem.Name = "wesktopToolStripMenuItem";
-			this.wesktopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.wesktopToolStripMenuItem.Text = "Wesktop";
-			this.wesktopToolStripMenuItem.Click += new System.EventHandler(this.wesktopToolStripMenuItem_Click);
+			this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
 			// 
 			// MenuBar
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
+			this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
 			this.ClientSize = new System.Drawing.Size(686, 225);
 			this.Controls.Add(this.AppBar);
+			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "MenuBar";
 			this.ShowIcon = false;
@@ -145,6 +164,7 @@ namespace Wesktop
 			this.Text = "Wesktop";
 			this.TopMost = true;
 			this.Load += new System.EventHandler(this.OnLoad);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MenuBar_KeyUp);
 			this.AppBar.ResumeLayout(false);
 			this.AppBar.PerformLayout();
 			this.ResumeLayout(false);
@@ -164,6 +184,8 @@ namespace Wesktop
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem wINEToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem wesktopToolStripMenuItem;
+		private System.Windows.Forms.ToolStripLabel Time;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 	}
 }
 
