@@ -110,7 +110,7 @@ namespace Wesktop__.NET_Framework_4._7._2_
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.Cancel;
-			this.ClientSize = new System.Drawing.Size(396, 180);
+			this.ClientSize = new System.Drawing.Size(365, 171);
 			this.Controls.Add(this.RunTextBox);
 			this.Controls.Add(this.Browse);
 			this.Controls.Add(this.Cancel);
@@ -118,6 +118,7 @@ namespace Wesktop__.NET_Framework_4._7._2_
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "RunDialog";
