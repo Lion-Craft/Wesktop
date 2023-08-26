@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Reflection;
 using System.Threading;
@@ -84,6 +84,23 @@ namespace Wesktop
 			}
 		}
 
+
+		private void controlPanelToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Process.Start("control");
+		}
+
+		private void wINEConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Process.Start("winecfg");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message + "\n\nThis can be caused due to running either natively on Windows or due to a corrupt WINE install.");
+			}
+    }
 		//	Update Clock and Date each timer tick (50ms)
 		private void timer1_Tick(object sender, EventArgs e)
 		{

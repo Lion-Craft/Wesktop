@@ -1,4 +1,3 @@
-﻿
 namespace Wesktop
 {
 	partial class MenuBar
@@ -43,6 +42,8 @@ namespace Wesktop
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.Time = new System.Windows.Forms.ToolStripLabel();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.controlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wINEConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.AppBar.SuspendLayout();
 			this.SuspendLayout();
@@ -66,6 +67,8 @@ namespace Wesktop
 			// 
 			this.Start.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
+            this.wINEConfigurationToolStripMenuItem,
+            this.controlPanelToolStripMenuItem,
             this.runToolStripMenuItem,
             this.fileExplorerToolStripMenuItem,
             this.toolStripSeparator2,
@@ -149,10 +152,28 @@ namespace Wesktop
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
 			// 
+
+			// controlPanelToolStripMenuItem
+			// 
+			this.controlPanelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controlPanelToolStripMenuItem.Image")));
+			this.controlPanelToolStripMenuItem.Name = "controlPanelToolStripMenuItem";
+			this.controlPanelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.controlPanelToolStripMenuItem.Text = "Control Panel";
+			this.controlPanelToolStripMenuItem.Click += new System.EventHandler(this.controlPanelToolStripMenuItem_Click);
+			// 
+			// wINEConfigurationToolStripMenuItem
+			// 
+			this.wINEConfigurationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("wINEConfigurationToolStripMenuItem.Image")));
+			this.wINEConfigurationToolStripMenuItem.Name = "wINEConfigurationToolStripMenuItem";
+			this.wINEConfigurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.wINEConfigurationToolStripMenuItem.Text = "WINE Configuration";
+			this.wINEConfigurationToolStripMenuItem.Click += new System.EventHandler(this.wINEConfigurationToolStripMenuItem_Click);
+
 			// timer1
 			// 
 			this.timer1.Interval = 50;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
 			// 
 			// MenuBar
 			// 
@@ -194,6 +215,8 @@ namespace Wesktop
 		private System.Windows.Forms.ToolStripMenuItem wesktopToolStripMenuItem;
 		private System.Windows.Forms.ToolStripLabel Time;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripMenuItem controlPanelToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem wINEConfigurationToolStripMenuItem;
 		private System.Windows.Forms.Timer timer1;
 	}
 }
