@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Reflection;
 using System.Threading;
@@ -6,12 +6,13 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Wesktop__.NET_Framework_4._7._2_;
+using System.ComponentModel;
 
 namespace Wesktop
 {
 	public partial class MenuBar : Form
 	{
-		
+
 		public MenuBar()
 		{
 			InitializeComponent();
@@ -21,12 +22,12 @@ namespace Wesktop
 		private void OnLoad(object sender, EventArgs e)
 		{
 			Rectangle screen = Screen.FromControl(this).Bounds;
-			Width = screen.Width;	//	Sets width of MenuBar
-			Height = 25;	//	Sets height of MenuBar		Note: 25 is the correct height for the AppBar
+			Width = screen.Width;   //	Sets width of MenuBar
+			Height = 25;    //	Sets height of MenuBar		Note: 25 is the correct height for the AppBar
 			ActiveForm.Size = new Size(Width, Height);    //	Sets width to screen width
-			//ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
-
-			Start.ShowDropDownArrow = false;	//	Disable the Arrow on the Menu button
+														  //ActiveForm.Location = new Point(0, Screen.FromControl(this).Bounds.Bottom);
+			Start.ShowDropDownArrow = false;    //	Disable the Arrow on the Menu button
+			timer1.Start();
 		}
 
 		//	Exit Wesktop
@@ -83,6 +84,7 @@ namespace Wesktop
 			}
 		}
 
+
 		private void controlPanelToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("control");
@@ -98,6 +100,11 @@ namespace Wesktop
 			{
 				MessageBox.Show(ex.Message + "\n\nThis can be caused due to running either natively on Windows or due to a corrupt WINE install.");
 			}
+    }
+		//	Update Clock and Date each timer tick (50ms)
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			Time.Text = DateTime.Now.ToString("HH:mm dd.MM.yyyy");    //	Get Time and write it into the Time Label
 		}
 	}
 }

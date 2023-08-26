@@ -1,4 +1,3 @@
-﻿
 namespace Wesktop
 {
 	partial class MenuBar
@@ -29,6 +28,7 @@ namespace Wesktop
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBar));
 			this.AppBar = new System.Windows.Forms.ToolStrip();
 			this.Start = new System.Windows.Forms.ToolStripDropDownButton();
@@ -44,6 +44,7 @@ namespace Wesktop
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.controlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wINEConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.AppBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -142,8 +143,8 @@ namespace Wesktop
 			// 
 			this.Time.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.Time.Name = "Time";
-			this.Time.Size = new System.Drawing.Size(22, 22);
-			this.Time.Text = "!!:!!";
+			this.Time.Size = new System.Drawing.Size(34, 22);
+			this.Time.Text = "EE:EE";
 			// 
 			// toolStripSeparator3
 			// 
@@ -151,6 +152,7 @@ namespace Wesktop
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
 			// 
+
 			// controlPanelToolStripMenuItem
 			// 
 			this.controlPanelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controlPanelToolStripMenuItem.Image")));
@@ -166,6 +168,12 @@ namespace Wesktop
 			this.wINEConfigurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.wINEConfigurationToolStripMenuItem.Text = "WINE Configuration";
 			this.wINEConfigurationToolStripMenuItem.Click += new System.EventHandler(this.wINEConfigurationToolStripMenuItem_Click);
+
+			// timer1
+			// 
+			this.timer1.Interval = 50;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+
 			// 
 			// MenuBar
 			// 
@@ -209,6 +217,7 @@ namespace Wesktop
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem controlPanelToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem wINEConfigurationToolStripMenuItem;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
 
