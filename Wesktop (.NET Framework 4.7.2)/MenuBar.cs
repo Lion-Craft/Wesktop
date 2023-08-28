@@ -16,6 +16,7 @@ namespace Wesktop
 		public MenuBar()
 		{
 			InitializeComponent();
+			
 		}
 
 		//	Size window to appropriate size and hide arrow on load
@@ -100,7 +101,7 @@ namespace Wesktop
 			{
 				MessageBox.Show(ex.Message + "\n\nThis can be caused due to running either natively on Windows or due to a corrupt WINE install.");
 			}
-    }
+		}
 		//	Update Clock and Date each timer tick (50ms)
 		private void timer1_Tick(object sender, EventArgs e)
 		{

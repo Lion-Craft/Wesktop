@@ -35,6 +35,8 @@ namespace Wesktop
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wINEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wesktopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wINEConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.controlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fileExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -42,8 +44,6 @@ namespace Wesktop
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.Time = new System.Windows.Forms.ToolStripLabel();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.controlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.wINEConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.AppBar.SuspendLayout();
 			this.SuspendLayout();
@@ -104,6 +104,22 @@ namespace Wesktop
 			this.wesktopToolStripMenuItem.Text = "Wesktop";
 			this.wesktopToolStripMenuItem.Click += new System.EventHandler(this.wesktopToolStripMenuItem_Click);
 			// 
+			// wINEConfigurationToolStripMenuItem
+			// 
+			this.wINEConfigurationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("wINEConfigurationToolStripMenuItem.Image")));
+			this.wINEConfigurationToolStripMenuItem.Name = "wINEConfigurationToolStripMenuItem";
+			this.wINEConfigurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.wINEConfigurationToolStripMenuItem.Text = "WINE Configuration";
+			this.wINEConfigurationToolStripMenuItem.Click += new System.EventHandler(this.wINEConfigurationToolStripMenuItem_Click);
+			// 
+			// controlPanelToolStripMenuItem
+			// 
+			this.controlPanelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controlPanelToolStripMenuItem.Image")));
+			this.controlPanelToolStripMenuItem.Name = "controlPanelToolStripMenuItem";
+			this.controlPanelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.controlPanelToolStripMenuItem.Text = "Control Panel";
+			this.controlPanelToolStripMenuItem.Click += new System.EventHandler(this.controlPanelToolStripMenuItem_Click);
+			// 
 			// runToolStripMenuItem
 			// 
 			this.runToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripMenuItem.Image")));
@@ -152,28 +168,10 @@ namespace Wesktop
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
 			// 
-
-			// controlPanelToolStripMenuItem
-			// 
-			this.controlPanelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("controlPanelToolStripMenuItem.Image")));
-			this.controlPanelToolStripMenuItem.Name = "controlPanelToolStripMenuItem";
-			this.controlPanelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.controlPanelToolStripMenuItem.Text = "Control Panel";
-			this.controlPanelToolStripMenuItem.Click += new System.EventHandler(this.controlPanelToolStripMenuItem_Click);
-			// 
-			// wINEConfigurationToolStripMenuItem
-			// 
-			this.wINEConfigurationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("wINEConfigurationToolStripMenuItem.Image")));
-			this.wINEConfigurationToolStripMenuItem.Name = "wINEConfigurationToolStripMenuItem";
-			this.wINEConfigurationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.wINEConfigurationToolStripMenuItem.Text = "WINE Configuration";
-			this.wINEConfigurationToolStripMenuItem.Click += new System.EventHandler(this.wINEConfigurationToolStripMenuItem_Click);
-
 			// timer1
 			// 
 			this.timer1.Interval = 50;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-
 			// 
 			// MenuBar
 			// 
