@@ -106,6 +106,24 @@ namespace Wesktop
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			Time.Text = DateTime.Now.ToString("HH:mm dd.MM.yyyy");    //	Get Time and write it into the Time Label
+			programBar();
+		}
+		//	Everything AppBar
+		public void programBar()
+		{
+			Process[] processes = Process.GetProcesses();
+
+			foreach (Process process in processes)
+			{
+				/*if (!string.IsNullOrEmpty(process.MainWindowTitle) && !AppBar.Items.ContainsKey(process.MainWindowTitle))
+				{*/
+					Debug.WriteLine(process.Handle);
+					Icon programIcon = Icon.FromHandle(process.Handle);
+					Bitmap bitmap = programIcon.ToBitmap();
+					Image image = (Image)bitmap;
+					AppBar.Items.Add(process.MainWindowTitle, image);
+				//}
+			}
 		}
 	}
 }
