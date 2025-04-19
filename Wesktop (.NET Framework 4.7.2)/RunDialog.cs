@@ -14,8 +14,16 @@ namespace Wesktop__.NET_Framework_4._7._2_
 		//	This is run when either the "Ok" button or accept key is pressed
 		private void Accept_Click(object sender, EventArgs e)
 		{
-			Process.Start(RunTextBox.Text);	//	Get text from TextBox and start the process
-			ActiveForm.Hide();	//	Close RunDialog
+			string cmd = RunTextBox.Text;	//	Get command from RunTextBox
+			try
+			{
+				Process.Start(cmd); //	Run start the process pointed to by cmd
+				ActiveForm.Hide();  //	Close RunDialog
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Wesktop cannot find '" + cmd + "'. Make sure you typed the name correctly, and then try again.", cmd, MessageBoxButtons.OK, MessageBoxIcon.Error);	//	Show error message with explanation
+			}
 		}
 
 		//	TODO: Fix error when opening Run Dialog
