@@ -76,7 +76,8 @@ namespace Wesktop
 			this.Start.Image = ((System.Drawing.Image)(resources.GetObject("Start.Image")));
 			this.Start.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.Start.Name = "Start";
-			this.Start.Size = new System.Drawing.Size(67, 22);
+			this.Start.ShowDropDownArrow = false;
+			this.Start.Size = new System.Drawing.Size(58, 22);
 			this.Start.Text = "Menu";
 			this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.Start.ToolTipText = "Opens the Menu";
